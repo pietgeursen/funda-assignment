@@ -5,17 +5,19 @@
 
 
 ```sh
-git clone https://github.com/pietgeursen/funda-assignment
-cd funda-assignment 
-npm install
+$ git clone https://github.com/pietgeursen/funda-assignment
+$ cd funda-assignment 
+$ npm install
 ```
+
+Rename the `.env_example` file to .env. Edit the file and set your funda api key.
 
 ## Run
 
 ### Find the agents with the most listings.
 
 ```sh
-./index
+$ ./index
 ```
 
 Will display something like: 
@@ -51,17 +53,17 @@ Will display something like:
 ### Find the agents with the most listings with gardens.
 
 ```sh
-./index -g
+$ ./index -g
 ```
 
 ### Print help message
 
 ```sh
-./index.js --help
+$ ./index.js --help
 ```
 
 ## Test
 
 ```sh
-npm run test
+$ npm run test
 ```
