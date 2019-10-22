@@ -66,5 +66,5 @@ $ ./index.js --help
 ## Test
 
 ```sh
-$ npm run test
+$ npm test
 ```
