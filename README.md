@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/pietgeursen/funda-assignment.svg?branch=master)](https://travis-ci.com/pietgeursen/funda-assignment)
 # Funda Programming Assignment
 
 
