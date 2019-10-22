@@ -1,0 +1,5 @@
+{
+  "BASE_URL": "http://partnerapi.funda.nl/feeds/Aanbod.svc/json/",
+  "PAGE_SIZE": 25,
+  "RATE_LIMIT_REQUESTS_PER_MINUTE": 90
+}

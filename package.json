@@ -1,0 +1,21 @@
+{
+  "name": "funda-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.test.js"
+  },
+  "author": "pietgeursen",
+  "license": "ISC",
+  "dependencies": {
+    "cli": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "pull-async": "^1.0.0",
+    "pull-pushable": "^2.2.0",
+    "pull-stream": "^3.6.14",
+    "ramda": "^0.26.1",
+    "request": "^2.88.0",
+    "tape": "^4.11.0"
+  }
+}
