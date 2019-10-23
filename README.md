@@ -61,10 +61,49 @@ $ ./index -g
 $ ./index.js --help
 ```
 
+Prints:
+
+```
+Usage:
+  index.js [OPTIONS] [ARGS]
+
+Options:
+  -g, --withGardens BOOL Only properties that have gardens
+  -h, --help             Display help and usage details
+```
+
 ## Test
 
 ```sh
 $ npm test
+```
+
+```
+> npx standard && tape test/*.test.js
+
+TAP version 13
+# end to end
+ok 1 progress gets called
+ok 2 error is null
+ok 3 there are two agents
+ok 4 The agent with the most objects is first
+ok 5 The agent has the correct number of listings
+# if the request fails, getTopTenAgents should call back with error
+ok 6 should be equal
+# if the request succeeds but has an empty body, getTopTenAgents should call back with error
+ok 7 Error is set
+# topTenAgents orders the results correctly
+ok 8 agents are in correct order
+# topTenAgents only gets the top ten
+ok 9 selects only the top ten
+# doesn't explode if passed an empty object
+ok 10 should not throw
+
+1..10
+# tests 10
+# pass  10
+
+# ok
 ```
 
 ## Add to the path (in development)
