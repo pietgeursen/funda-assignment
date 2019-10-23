@@ -89,7 +89,7 @@ $ topTenFundaAgents -g
 - Has a sane cli interface that would be easy to extend
 - Tests enforce coding style ([standardjs](https://standardjs.com/))
 - CI is set up
-- There is a separate `config.js` where things like the rate limit can easily be changed
+- There is a separate `config.json` where things like the rate limit can easily be changed
 - Supports being added to the path
 
 ## Thoughts and discussion
