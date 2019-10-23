@@ -2,7 +2,7 @@ const test = require('tape')
 const getTopTenAgents = require('../lib/getTopTenAgents')
 
 test('end to end', function (t) {
-  t.plan(6)
+  t.plan(5)
   getTopTenAgents(
     {
       request,
@@ -58,7 +58,7 @@ function request (opts, cb) {
       body: JSON.stringify({
         Paging: {
           HuidigePagina: 1,
-          AantalPaginas: 2
+          AantalPaginas: 1
         },
         Objects: [
           {
@@ -78,7 +78,7 @@ function request (opts, cb) {
       body: JSON.stringify({
         Paging: {
           HuidigePagina: 1,
-          AantalPaginas: 2
+          AantalPaginas: 1
         },
         Objects: []
       })
