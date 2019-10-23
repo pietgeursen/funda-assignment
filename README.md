@@ -85,11 +85,11 @@ $ topTenFundaAgents -g
 - Shows a progress bar
 - Uses a .env file so that you don't accidentally commit the api key
 - Program exits with a helpful message if you don't provide an api key
-- Has at least _some_ tests. The end to end test mocks the `request` library so the tests don't rely on the network
+- Has at least _some_ tests. The end to end test mocks the [`request`](https://www.npmjs.com/package/request) library so the tests don't rely on the network
 - Has a sane cli interface that would be easy to extend
-- Tests enforce coding style ([standardjs](https://standardjs.com/))
-- CI is set up
-- There is a separate `config.json` where things like the rate limit can easily be changed
+- Tests enforce coding style ([standard](https://standardjs.com/))
+- [CI](https://travis-ci.com/pietgeursen/funda-assignment) is set up
+- There is a separate [`config.json`](./config.json) where things like the rate limit can easily be changed
 - Supports being added to the path
 
 ## Thoughts and discussion
