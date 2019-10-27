@@ -21,10 +21,12 @@ const { withGardens } = cli.parse({
   withGardens: ['g', 'Only properties that have gardens', 'bool', false]
 })
 
-getTopTenAgents(
-  { request, withGardens, updateProgress: cli.progress },
-  (err, agents) => {
-    if (err) return console.error(err)
-    printTopAgents({ agents })
-  }
-)
+async function get () {
+  const agents = await getTopTenAgents(
+    { request, withGardens, updateProgress: cli.progress }
+  )
+
+  printTopAgents({ agents })
+}
+
+get()

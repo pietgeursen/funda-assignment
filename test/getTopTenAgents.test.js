@@ -1,53 +1,55 @@
 const test = require('tape')
 const getTopTenAgents = require('../lib/getTopTenAgents')
 
-test('end to end', function (t) {
-  t.plan(5)
-  getTopTenAgents(
+test('end to end', async function (t) {
+  const result = await getTopTenAgents(
     {
       request,
       updateProgress: () => {
         t.ok(true, 'progress gets called')
       }
-    },
-    (err, result) => {
-      t.error(err, 'error is null')
-      t.equal(result.length, 2, 'there are two agents')
-      t.equal(
-        result[0].name,
-        'Piet',
-        'The agent with the most objects is first'
-      )
-      t.equal(
-        result[0].numListings,
-        2,
-        'The agent has the correct number of listings'
-      )
     }
   )
+  t.equal(result.length, 2, 'there are two agents')
+  t.equal(
+    result[0].name,
+    'Piet',
+    'The agent with the most objects is first'
+  )
+  t.equal(
+    result[0].numListings,
+    2,
+    'The agent has the correct number of listings'
+  )
+  t.end()
 })
 
-test('if the request fails, getTopTenAgents should call back with error', function (t) {
+test('if the request fails, getTopTenAgents should call back with error', async function (t) {
+  t.plan(1)
   const expectedError = Error('Bang!')
   const request = (opts, cb) => cb(expectedError)
-  getTopTenAgents(
-    { request, withGardens: true, updateProgress: () => {} },
-    (err, result) => {
-      t.equal(err, expectedError)
-      t.end()
-    }
-  )
+
+  try {
+    await getTopTenAgents(
+      { request, withGardens: true, updateProgress: () => {} }
+    )
+  } catch (e) {
+    t.equal(e, expectedError)
+    t.end()
+  }
 })
 
-test('if the request succeeds but has an empty body, getTopTenAgents should call back with error', function (t) {
+test('if the request succeeds but has an empty body, getTopTenAgents should call back with error', async function (t) {
   const request = (opts, cb) => cb(null, {})
-  getTopTenAgents(
-    { request, withGardens: true, updateProgress: () => {} },
-    (err, result) => {
-      t.ok(err, 'Error is set')
-      t.end()
-    }
-  )
+
+  try {
+    await getTopTenAgents(
+      { request, withGardens: true, updateProgress: () => {} }
+    )
+  } catch (e) {
+    t.ok(e)
+    t.end()
+  }
 })
 
 // A mock of the request function.
